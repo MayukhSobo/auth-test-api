@@ -149,7 +149,7 @@ func deleteUserHandler(c *fiber.Ctx) error {
 		// If the user was found
 		if password != users[userId].Password {
 			return c.Status(fiber.StatusUnauthorized).JSON(fiber.Map{
-				"message": "Authentication Failed",
+				"message": "Cannot get user information without authorization",
 			})
 		}
 	}
