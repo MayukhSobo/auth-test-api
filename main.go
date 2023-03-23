@@ -13,7 +13,7 @@ import (
 type User struct {
 	ID       string `json:"user_id" validate:"required,min=6,max=20,alphanum"`
 	Password string `json:"password" validate:"required,min=8,max=20,alphanum,excludesall=' \t\n'"`
-	Nickname string `json:"nickname validate:"lt=30,excludesall=' \t\n'"`
+	Nickname string `json:"nickname" validate:"lt=30,excludesall=' \t\n'"`
 	Comment  string `json:"comment validate:lt=100"`
 }
 
