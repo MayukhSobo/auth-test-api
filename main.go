@@ -19,12 +19,12 @@ var users = make(map[string]*User)
 // POST /signup
 func createUserHandler(c *fiber.Ctx) error {
 	user := new(User)
-	if err := c.BodyParser(user); err != nil {
-		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
-			"message": "Account creation failed",
-			"cause":   "required user_id and password",
-		})
-	}
+	// if err := c.BodyParser(user); err != nil {
+	// 	return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
+	// 		"message": "Account creation failed",
+	// 		"cause":   "required user_id and password",
+	// 	})
+	// }
 
 	validate := validator.New()
 	if err := validate.Struct(user); err != nil {
