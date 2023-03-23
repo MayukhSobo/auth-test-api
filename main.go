@@ -237,7 +237,7 @@ func updateUserHandler(c *fiber.Ctx) error {
 	}
 	// If the user was found
 	if password != users[userId].Password {
-		return c.Status(fiber.StatusUnauthorized).JSON(fiber.Map{
+		return c.Status(fiber.StatusForbidden).JSON(fiber.Map{
 			"message": "No Permission for Update",
 		})
 	}
